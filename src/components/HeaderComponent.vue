@@ -1,19 +1,18 @@
 <template>
-    <header class="bg-purple">
+    <header class="bg-dark">
         <v-container>
             <div class="row">
                 <div class="col-1 my-3">
-                    <Button as="router-link" to="/" label="Home" variant="link" />
-                    <v-btn base-color="light-blue">Home</v-btn>
+                    <v-btn base-color="primary" @click="router.push('/')">Home</v-btn>
                 </div>
 
                 <div v-if="logged == false" class="d-flex col-11 justify-content-end my-3 gap-4">
-                    <Button severity="secondary" @click="login" label="Login" />
-                    <Button severity="secondary" @click="signUp" label="Sign Up" />
+                    <v-btn base-color="secondary" @click="router.push('/Login')">Login</v-btn>
+                    <v-btn base-color="grey" @click="router.push('/SignUp')">Sign Up</v-btn>
                 </div>
                 <div v-else class="col-11 d-flex justify-content-end my-3 gap-3">
                     <v-btn v-if="admin">Tabela Geral</v-btn>
-                    <v-btn base-color="gray" @click="logout">Log Out</v-btn>
+                    <v-btn base-color="secondary" @click="logout">Log Out</v-btn>
                 </div>
             </div>
 
@@ -23,7 +22,7 @@
 
 <script setup lang="ts">
 import { getAccessToken } from '../services/auth';
-import { login, signUp, logout } from '@/stores/login';
+import { logout } from '@/stores/login';
 import global from '@/stores/global';
 import { onMounted, ref } from 'vue';
 import { jwtDecode } from 'jwt-decode';
