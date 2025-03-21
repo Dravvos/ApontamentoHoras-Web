@@ -1,5 +1,5 @@
 import { AxiosError } from 'axios'
-import { api } from './api'
+import { api } from './auth-api'
 import router from '@/router'
 
 /**

@@ -1,4 +1,4 @@
-import { get, post } from "@/services/api-handler";
+import { post } from "@/services/auth-api-handler";
 import { setCookie } from "@/services/cookie-handler"
 import global from "./global";
 

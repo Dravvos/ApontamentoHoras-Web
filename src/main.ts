@@ -1,6 +1,7 @@
 import './assets/main.css'
 import 'vuetify/styles'
 import 'vuetify/dist/vuetify.min.css'
+import '@mdi/font/css/materialdesignicons.css'; //ícones do Material Design Icons
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'

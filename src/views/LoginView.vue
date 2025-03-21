@@ -52,11 +52,12 @@ const password = ref<string>();
 
 async function loginUser() {
     const ret = await login({
-        usuario: usuario.value,
+        username: usuario.value,
         password: password.value
     });
     if (ret === true) {
-
+        console.log('Logado com sucesso');
+        router.push('/');
     }
 }
 
